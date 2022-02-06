@@ -1,0 +1,150 @@
+﻿@model TwenGo.Models.ViewModels.RoleViewModel
+<style>
+
+    .panel h2 {
+        color: #444444;
+        font-size: 18px;
+        margin: 0 0 8px 0;
+    }
+
+    .panel p {
+        color: #777777;
+        font-size: 14px;
+        margin-bottom: 30px;
+        line-height: 24px;
+    }
+
+    .login-form .form-control {
+        background: #f7f7f7 none repeat scroll 0 0;
+        border: 1px solid #5fBD74;
+        border-radius: 4px;
+        font-size: 14px;
+        height: 50px;
+        line-height: 50px;
+        width: 100%;
+    }
+
+    .main-div {
+        background: #ffffff none repeat scroll 0 0;
+        border-radius: 1px;
+        margin: 10px auto 30px;
+        max-width: 38%;
+        padding: 50px 70px 70px 71px;
+        border-color: #5fBD74;
+        border-style: solid;
+    }
+
+    .login-form .form-group {
+        margin-bottom: 10px;
+    }
+
+    .login-form {
+        text-align: center;
+    }
+
+    .forgot a {
+        color: #777777;
+        font-size: 14px;
+        text-decoration: underline;
+    }
+
+    .login-form .btn.btn-primary {
+        background: #5fBD74 none repeat scroll 0 0;
+        border-color: #ffffff;
+        color: #ffffff;
+        font-size: 14px;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding: 0;
+    }
+
+    .forgot {
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .botto-text {
+        color: #ffffff;
+        font-size: 14px;
+        margin: auto;
+    }
+
+    .login-form .btn.btn-primary.reset {
+        background: #ff9900 none repeat scroll 0 0;
+    }
+
+    .back {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+        .back a {
+            color: #444444;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+
+
+    a:hover {
+        text-decoration: none !important;
+        color: #000000;
+    }
+
+    .divider-text {
+        position: relative;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+        .divider-text span {
+            padding: 7px;
+            font-size: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .divider-text:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            top: 55%;
+            left: 0;
+            z-index: 1;
+        }
+
+    #Left {
+        text-align: left;
+    }
+</style>
+
+<body id="LoginForm">
+    <div class="container">
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>角色建立</h2>
+                </div>
+                <form asp-action="RoleCreate">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input asp-for="RoleName" class="form-control" />
+                    </div>
+                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                    <br />
+                    <div class="form-group">
+                        <button type="submit" class="btn  btn-block"> 確定送出  </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,279 @@
+﻿<!doctype html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>ServeGo</title>
+    <link rel="icon" href="~/images/frog_icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/ionicons.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/css/owl.carousel.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/css/owl.theme.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/css/settings.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/css/custom.css" type="text/css" media="all">
+    <link rel='stylesheet' href='~/css/prettyPhoto.css' type='text/css' media='all'>
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="~/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/modernizr-2.7.1.min.js"></script>
+    <script type="text/javascript" src="~/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="~/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="~/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.isotope.init.js"></script>
+    <script type="text/javascript" src="~/js/script.js"></script>
+    <script type='text/javascript' src='~/js/jquery.prettyPhoto.js'></script>
+    <script type='text/javascript' src='~/js/jquery.prettyPhoto.init.min.js'></script>
+
+    <script src="~/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="~/js/extensions/revolution.extension.parallax.min.js"></script>
+
+    @await RenderSectionAsync("Styles", required: false)
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">*@
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div class="noo-spinner">
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <div id="menu-slideout" class="slideout-menu hidden-md-up">
+        <div class="mobile-menu">
+            <ul id="mobile-menu" class="menu">
+                <li><a asp-area="" asp-controller="Home" asp-action="index">首頁</a></li>
+                <li><a asp-area="" asp-controller="AboutUs" asp-action="index">關於我們</a></li>
+                <li><a asp-area="" asp-controller="Shop" asp-action="index">購物</a></li>
+                <li><a asp-area="" asp-controller="Cart" asp-action="index">購物車</a></li>
+                <li><a asp-area="" asp-controller="Contact" asp-action="index">聯絡我們</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="site">
+        <header>
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="topbar-menu">
+                                <partial name="_LoginPartial" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a asp-area="" asp-controller="Home" asp-action="index">
+                            <img class="logo-image" src="~/images/frog128.png" alt="Organik Logo" />
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <form asp-controller="Shop" asp-action="Index">
+                            <input type="text" class="top-search-input" name="SearchString" value="@ViewBag.searchText" />
+                            <button class="btn btn-warning" type="submit"><i class="ion-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="btn-wrap">
+                            <div class="mini-cart-wrap">
+                                <div class="mini-cart">
+                                    <div class="mini-cart-icon" data-count="!">
+                                        <i class="ion-bag"></i>
+                                    </div>
+                                </div>
+                                <div class="widget-shopping-cart-content" id="cartMenu">
+                                    <ul class="cart-list">
+                                        <li v-for="item in product">
+                                            <a onclick="toastr['warning']('商品已從購物車移除!');" href="#" class="remove" v-on:click="CleanCart(item.id)">×</a>
+                                            <a class="product-title fz-16 fw-bolder">
+                                                <img :src=item.image alt="" />
+                                                {{item.name}}&nbsp;
+                                            </a>
+                                            <span class="amount">x{{item.amount}}</span>
+                                            <span class="quantity">小計: NT${{item.subtotal}}</span>
+                                        </li>
+                                    </ul>
+                                    <p class="total">
+                                        <strong style="font-size:20px">總價 </strong>
+                                        <span class="amount">NT$ {{GetTotal(product)}}</span>
+                                    </p>
+                                    <p class="buttons">
+                                        <a asp-area="" asp-controller="Cart" asp-action="index" class="view-cart">檢視購物車</a>
+                                        <a asp-area="" asp-controller="Order" asp-action="index" class="checkout">立即購買</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <header class="header header-mobile">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <a asp-controller="Home" asp-action="index">
+                            <img src="~/images/frog128.png" class="footer-logo" alt="" />
+                        </a>
+                        <p>
+                            歡迎來到ServeGo，我們將為您提供最完善的生活服務。
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="widget">
+                            <h3 class="widget-title">相關資訊</h3>
+                            <ul>
+                                <li><a href="/shop">New Products</a></li>
+                                <li><a href="#">Top Sellers</a></li>
+                                <li><a href="#">Our Blog</a></li>
+                                <li><a href="#">About Our Shop</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="widget">
+                            <h3 class="widget-title">額外連結</h3>
+                            <ul>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">Our Blog</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Secure Shopping</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="widget">
+                            <h3 class="widget-title">訂閱</h3>
+                            <p>
+                                訂閱我們收到最新消息!
+                            </p>
+                            <form class="newsletter">
+                                <input type="email" name="EMAIL" placeholder="輸入電子信箱" required="" />
+                                <button><i class="fa fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="copyright">
+            <a asp-controller="Home" asp-action="index"><div class="backtotop" id="backtotop"></div></a>
+        </div>
+    </div>@*site*@
+    @await RenderSectionAsync("Scripts", required: false)
+    <style>
+        .copyrights {
+            text-indent: -9999px;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            overflow: hidden;
+        }
+    </style>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+    <script>
+        var vcart = new Vue({
+            el: '#cartMenu',
+            data: {
+                product: []
+            },
+            mounted: function () {
+                this.GetCartProduct();
+            },
+            methods: {
+                GetCartProduct: function () {
+                    let self = this;
+                    fetch("/Cart/GetCart")
+                        .then(function (res) { return res.json() })
+                        .then(function (d) { self.product = d })
+                },
+                CleanCart: function (id) {
+                    let data = new FormData();
+                    data.append("id", id);
+                    fetch("/Cart/CleanCart", {
+                        body: data, // must match 'Content-Type' header
+                        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    }).then(response => response.text())
+                        .then(function (d) {
+                            vcart.GetCartProduct();
+                        })
+                },
+                GetTotal: function (prod) {
+                    if (prod == null || prod.length == 0) {
+                        return 0;
+                    }
+                    return prod[0].total;
+                }
+            },
+        });
+    </script>
+</body>
+</html>

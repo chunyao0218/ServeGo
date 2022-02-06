@@ -1,0 +1,114 @@
+﻿<body>
+    <div>
+        <div>
+            <div class="section border-bottom pt-2 pb-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="breadcrumbs">
+                                <li><a a asp-controller="Home" asp-action="index">首頁</a></li>
+                                <li><a asp-controller="Shop" asp-action="index">商品</a></li>
+                                <li>購物車</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section pt-7 pb-7">
+                <div class="container">
+                    <div class="row" id="cartPage">
+                        <div class="col-md-8">
+                            <table class="table shop-cart">
+                                <tbody >
+                                    <tr class="cart_item" v-for="item in product">
+                                        <td class="product-remove">
+                                            <a href="#" onclick="toastr['warning']('商品已從購物車移除!');" class="remove" v-on:click="CleanCart(item.id)">×</a>
+                                        </td>
+                                        <td class="product-thumbnail">
+                                            <a >
+                                                <img :src=item.image alt="" />
+                                            </a>
+                                        </td>
+                                        <td class="product-info">
+                                            <a  class="product-title fz-20 fw-bolder">{{item.name}}</a>
+                                            <span class="sub-title" >{{item.description}}</span>
+                                            <span class="amount" style="color:#5fbd74">單價: NT${{item.price}}</span>
+                                        </td>
+                                        <td class="product-quantity">
+                                            <div class="quantity">
+                                                <input id="qty-2" type="number" min="0" name="amount" readonly :value="item.amount" class="input-text qty text" size="4">
+                                            </div>
+                                        </td>
+                                        <td class="product-subtotal" width="200px">
+                                            <span class="amount" style="color:#5fbd74">小計: NT$ {{item.subtotal}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" class="actions">
+                                            <a class="continue-shopping" asp-controller="Shop" asp-action="index"> 繼續購物</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cart-totals" >
+                                <table>
+                                    <tbody>
+                                        <tr class="order-total">
+                                            <th>總金額</th>
+                                            <td><strong>NT$ {{GetTotal(product)}}</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="proceed-to-checkout">
+                                    <a asp-controller="Order" asp-action="index">填寫訂單資料</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var vcart2 = new Vue({
+            el: '#cartPage',
+            data: {
+                product: []
+            },
+            mounted: function () {
+                this.GetCartProduct();
+            },
+            methods: {
+                GetCartProduct: function () {
+                    let self = this;
+                    fetch("/Cart/GetCart")
+                        .then(function (res) { return res.json() })
+                        .then(function (d) { self.product = d })
+                },
+                CleanCart: function (id) {
+                    let data = new FormData();
+                    data.append("id", id);
+                    fetch("/Cart/CleanCart", {
+                        body: data, // must match 'Content-Type' header
+                        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    }).then(response => response.text())
+                        .then(function (d) {
+                            vcart.GetCartProduct();
+                            window.location.reload();
+                        })
+                },
+                GetTotal: function (prod) {                    
+                    if (prod == null || prod.length == 0) {
+                        return 0;
+                    }
+                    return prod[0].total;
+                }
+            },
+        });
+    </script>
+</body>
+
+
