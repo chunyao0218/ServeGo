@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oose7nBli6OUXZArC+/lZQO6Rny5EARf5yrIfoIUA5MIv+tJR1KgzCkHUZdaB/UtvHD2eEfYxOEVNNROGa/Pgw==",
+  "dgSpecHash": "CBx4vZTRSORCfavb3ws/o9Kd7zmEiC/84na/uc4PFMr/UTIKa7u6Y//KxUHHFp7i5lNgoLibEGRk2VcnrmHqDg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yao\\Downloads\\TFM103-No.2_Project - 複製\\TwenGo\\TwenGo\\TwenGo.csproj",
+  "projectFilePath": "C:\\Users\\yao\\Documents\\ServeGo\\TwenGo\\TwenGo\\TwenGo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yao\\.nuget\\packages\\googlerecaptcha\\1.2.1\\googlerecaptcha.1.2.1.nupkg.sha512",
     "C:\\Users\\yao\\.nuget\\packages\\googlerecaptchamvc\\1.0.1\\googlerecaptchamvc.1.0.1.nupkg.sha512",

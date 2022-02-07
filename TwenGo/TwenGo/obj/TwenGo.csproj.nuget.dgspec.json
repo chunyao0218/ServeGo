@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yao\\Downloads\\TFM103-No.2_Project - 複製\\TwenGo\\TwenGo\\TwenGo.csproj": {}
+    "C:\\Users\\yao\\Documents\\ServeGo\\TwenGo\\TwenGo\\TwenGo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yao\\Downloads\\TFM103-No.2_Project - 複製\\TwenGo\\TwenGo\\TwenGo.csproj": {
+    "C:\\Users\\yao\\Documents\\ServeGo\\TwenGo\\TwenGo\\TwenGo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yao\\Downloads\\TFM103-No.2_Project - 複製\\TwenGo\\TwenGo\\TwenGo.csproj",
+        "projectUniqueName": "C:\\Users\\yao\\Documents\\ServeGo\\TwenGo\\TwenGo\\TwenGo.csproj",
         "projectName": "TwenGo",
-        "projectPath": "C:\\Users\\yao\\Downloads\\TFM103-No.2_Project - 複製\\TwenGo\\TwenGo\\TwenGo.csproj",
+        "projectPath": "C:\\Users\\yao\\Documents\\ServeGo\\TwenGo\\TwenGo\\TwenGo.csproj",
         "packagesPath": "C:\\Users\\yao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yao\\Downloads\\TFM103-No.2_Project - 複製\\TwenGo\\TwenGo\\obj\\",
+        "outputPath": "C:\\Users\\yao\\Documents\\ServeGo\\TwenGo\\TwenGo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
